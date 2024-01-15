@@ -2,7 +2,8 @@
 
 // memanggil library express
 import Express, { Request, Response } from "express";
-
+import routebangunDatar from "./route/bangunDatar"
+import routebangunRuang from "./route/bangunRuang"
 // buat wadah untuk inisiasi express
 const app = Express()
 
@@ -18,7 +19,8 @@ app.get(`/serena`, (request : Request, response: Response) => {
         massage: `Hello World`
     })
 })
-
+app.use(routebangunDatar)
+app.use(routebangunRuang)
 // running server
 app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
